@@ -17,6 +17,15 @@ cat ${FAIR_INSTALL_DATA}/etc.network.interfaces > /etc/network/interfaces
 ifdown -a
 ifup -a
 
+
+echo "Blacklisting IPv6 modules due to a bug"
+
+sed -i 's/GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"/GRUB_CMDLINE_LINUX_DEFAULT="quiet splash ipv6.disable=1"/g' /etc/default/grub
+
+echo "Switching off IPv6"
+echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6
+
+
 echo "Altering /etc/hosts"
 # Here we add a number of hostnames to the 'hosts' file, so we can resolve the various alaises we have for the FAIR server.  Note that the IP address is fixed in the /etc/network/interfaces.
 
