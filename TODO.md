@@ -1,5 +1,7 @@
 # TODO
 
+- Remember to make the database in KA Lite writable
+
 Updated 2015-02-22
 
  - Ensure that error message is understandable when no drive detected
