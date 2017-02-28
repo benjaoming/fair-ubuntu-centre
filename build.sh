@@ -20,7 +20,7 @@ cd build/installscripts/data/intranet/
 if [ ! -d virtualenv ]
 then
 	echo "Getting wagtail build dependencies"
-	sudo apt-get install python-dev python-pip g++ libjpeg62-dev zlib1g-dev
+	sudo apt-get install python-dev python-pip g++ libjpeg62-dev zlib1g-dev python-virtualenv
 	virtualenv virtualenv
 	virtualenv --relocatable virtualenv
 fi
