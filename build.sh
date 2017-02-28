@@ -26,7 +26,9 @@ then
 fi
 
 echo "Installing requirements.txt..."
+set +o nounset
 source virtualenv/bin/activate
+set -o nounset
 pip install -r fairintranet/requirements.txt
 cd fairintranet
 python manage.py collectstatic --noinput
